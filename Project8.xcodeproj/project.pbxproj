@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95663D6A268EE4C10000EC34 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95663D68268EE4C10000EC34 /* level2.txt */; };
+		95663D6B268EE4C10000EC34 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95663D69268EE4C10000EC34 /* level1.txt */; };
 		95C3642B268DCBCD00A012CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3642A268DCBCD00A012CE /* AppDelegate.swift */; };
 		95C3642D268DCBCD00A012CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3642C268DCBCD00A012CE /* SceneDelegate.swift */; };
 		95C3642F268DCBCD00A012CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3642E268DCBCD00A012CE /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95663D68268EE4C10000EC34 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		95663D69268EE4C10000EC34 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 		95C36427268DCBCD00A012CE /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C3642A268DCBCD00A012CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C3642C268DCBCD00A012CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				95C36433268DCBCF00A012CE /* Assets.xcassets */,
 				95C36435268DCBCF00A012CE /* LaunchScreen.storyboard */,
 				95C36438268DCBCF00A012CE /* Info.plist */,
+				95663D69268EE4C10000EC34 /* level1.txt */,
+				95663D68268EE4C10000EC34 /* level2.txt */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -124,8 +130,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95663D6B268EE4C10000EC34 /* level1.txt in Resources */,
 				95C36437268DCBCF00A012CE /* LaunchScreen.storyboard in Resources */,
 				95C36434268DCBCF00A012CE /* Assets.xcassets in Resources */,
+				95663D6A268EE4C10000EC34 /* level2.txt in Resources */,
 				95C36432268DCBCD00A012CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +301,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.MrMurmanProd.Project8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -312,6 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.MrMurmanProd.Project8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
