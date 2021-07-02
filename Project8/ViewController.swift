@@ -7,9 +7,16 @@
 
 import UIKit
 
+struct Score {
+    var value: Int
+    var count: Int
+}
+
 class ViewController: UIViewController {
 
     //MARK: - Parameters declaration
+    
+    
     
     var cluesLabel: UILabel!
     var answersLabel: UILabel!
@@ -20,7 +27,19 @@ class ViewController: UIViewController {
     var activatedButtons = [UIButton]()
     var solutions = [String]()
     
-    var score = 0
+    var score = Score(value: 0, count: 0) {
+        
+            didSet {
+                scoreLabel.text = "Score: \(score.value)"
+            }
+        
+    }
+    
+//    var score = 0 {
+//        didSet {
+//            scoreLabel.text = "Score: \(score)"
+//        }
+//    }
     var level = 1
     
     //MARK: - UI Setup - General
@@ -166,15 +185,24 @@ class ViewController: UIViewController {
             answersLabel.text = splitAnswer?.joined(separator: "\n")
             
             currentAnswer.text = ""
-            score += 1
+            score.value += 1
+            score.count += 1
             
-            if score % 7 == 0 {
+            if score.count == 7 {
                 showNextLevelAlert()
             }
+        } else {
+            let ac = UIAlertController(title: "That's incorrect", message: nil, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Try again.", style: .cancel) { _ in
+                self.score.value -= 1
+                self.clearTapped(nil)
+            }
+            ac.addAction(dismissAction)
+            present(ac, animated: true)
         }
     }
     
-    @objc func clearTapped(_ sender: UIButton) {
+    @objc func clearTapped(_ sender: UIButton?) {
         currentAnswer.text = ""
         for button in activatedButtons {
             button.isHidden = false
@@ -246,6 +274,7 @@ class ViewController: UIViewController {
         let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
         let levelUp = UIAlertAction(title: "Let's go!", style: .default) { _ in
             self.level += 1
+            self.score.count = 0
             self.solutions.removeAll(keepingCapacity: true)
             self.loadLevel()
             
